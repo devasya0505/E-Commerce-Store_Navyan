@@ -2,12 +2,12 @@ import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
 import morgan from "morgan";
-import { connectDB } from "./config/db.js";
-import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
-import authRoutes from "./routes/authRoutes.js";
-import cartRoutes from "./routes/cartRoutes.js";
-import orderRoutes from "./routes/orderRoutes.js";
-import productRoutes from "./routes/productRoutes.js";
+import { connectDB } from "./src/config/db.js";
+import { errorHandler, notFound } from "./src/middleware/errorMiddleware.js";
+import authRoutes from "./src/routes/authRoutes.js";
+import cartRoutes from "./src/routes/cartRoutes.js";
+import orderRoutes from "./src/routes/orderRoutes.js";
+import productRoutes from "./src/routes/productRoutes.js";
 
 dotenv.config();
 
