@@ -17,4 +17,5 @@ services:
       - key: JWT_EXPIRES_IN
         value: 7d
       - key: CLIENT_URL
-        value: https://your-vercel-frontend-url.vercel.app
+      - value: https://e-commerce-store-navyan.vercel.app/
+
