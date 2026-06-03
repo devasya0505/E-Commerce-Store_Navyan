@@ -5,6 +5,7 @@
     {
       "source": "/api/:path*",
       "destination": "https://e-commerce-store-navyan.onrender.com/api/:path*"
+
     }
   ]
 }
