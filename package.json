@@ -1,0 +1,12 @@
+{
+  "name": "project-3-mern-ecommerce-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Advanced MERN stack e-commerce platform with customer and admin flows.",
+  "scripts": {
+    "backend": "npm run dev --prefix backend",
+    "frontend": "npm run dev --prefix frontend",
+    "seed": "npm run seed --prefix backend"
+  }
+}
+
