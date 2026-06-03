@@ -1,6 +1,6 @@
-# ShopSphere MERN E-Commerce Platform
+# DevMart MERN E-Commerce Platform
 
-ShopSphere is an advanced MERN stack e-commerce project with customer shopping flows, admin product management, cart handling, simulated payments, and order tracking.
+DevMart is an advanced MERN stack e-commerce project with customer shopping flows, admin product management, cart handling, simulated payments, and order tracking.
 
 ## Features
 
