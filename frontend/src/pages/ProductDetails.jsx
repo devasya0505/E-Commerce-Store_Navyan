@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import LoadingState from "../components/LoadingState.jsx";
 import { useAuth } from "../context/AuthContext.jsx";
 import { useCart } from "../context/CartContext.jsx";
+import { useNotification } from "../context/NotificationContext.jsx";
 import api from "../services/api.js";
 
 const ProductDetails = () => {
@@ -11,6 +12,7 @@ const ProductDetails = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { addItem } = useCart();
+  const { showNotification } = useNotification();
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(true);
@@ -38,6 +40,7 @@ const ProductDetails = () => {
     }
 
     await addItem(product._id, quantity);
+    showNotification(`Added ${quantity} x ${product.name} to cart!`, "success");
     navigate("/cart");
   };
 

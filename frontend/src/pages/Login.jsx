@@ -2,10 +2,12 @@ import { LogIn } from "lucide-react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
+import { useNotification } from "../context/NotificationContext.jsx";
 
 const Login = () => {
   const navigate = useNavigate();
   const { login, authLoading } = useAuth();
+  const { showNotification } = useNotification();
   const [form, setForm] = useState({ email: "user@example.com", password: "user123" });
   const [error, setError] = useState("");
 
@@ -15,6 +17,7 @@ const Login = () => {
 
     try {
       const user = await login(form.email, form.password);
+      showNotification("Logged in successfully! Welcome back.", "success");
       navigate(user.role === "admin" ? "/admin" : "/");
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");

@@ -2,10 +2,12 @@ import { ShoppingCart, Star } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
 import { useCart } from "../context/CartContext.jsx";
+import { useNotification } from "../context/NotificationContext.jsx";
 
 const ProductCard = ({ product }) => {
   const { user } = useAuth();
   const { addItem } = useCart();
+  const { showNotification } = useNotification();
   const navigate = useNavigate();
 
   const handleAdd = async () => {
@@ -15,6 +17,7 @@ const ProductCard = ({ product }) => {
     }
 
     await addItem(product._id, 1);
+    showNotification(`Added ${product.name} to cart!`, "success");
   };
 
   return (

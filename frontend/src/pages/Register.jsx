@@ -2,10 +2,12 @@ import { UserPlus } from "lucide-react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
+import { useNotification } from "../context/NotificationContext.jsx";
 
 const Register = () => {
   const navigate = useNavigate();
   const { register, authLoading } = useAuth();
+  const { showNotification } = useNotification();
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [error, setError] = useState("");
 
@@ -15,6 +17,7 @@ const Register = () => {
 
     try {
       await register(form);
+      showNotification("Account created! Logged in successfully.", "success");
       navigate("/");
     } catch (err) {
       setError(err.response?.data?.message || "Registration failed");
