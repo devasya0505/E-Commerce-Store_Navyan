@@ -1,6 +1,7 @@
 # DevMart MERN E-Commerce Platform
 
 DevMart is an advanced MERN stack e-commerce project with customer shopping flows, admin product management, cart handling, simulated payments, and order tracking.
+## Live Demo: https://e-commerce-store-navyan.vercel.app/
 
 ## Features
 
